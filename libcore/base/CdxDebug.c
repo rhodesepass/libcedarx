@@ -35,7 +35,7 @@ void CdxDumpThreadStack(pthread_t tid)
 #if (defined(__ANDROID__) && (CONF_ANDROID_MAJOR_VER < 5))
     const size_t MAX_DEPTH = 32;
     pthread_t tagTid;
-    pthread_t curTid = gettid();
+    pthread_t curTid = gettid_sunxi();
 
     tagTid = (tid == -1) ? curTid : tid;
 

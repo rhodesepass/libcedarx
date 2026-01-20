@@ -48,7 +48,7 @@ typedef char CHECK_LOG_LEVEL_EQUAL_TO_ANDROID[CDX_LOG_ORDER > 0 ? 1 : -1];
     } while (0)
 
 #define CDX_TRACE() \
-    CDX_LOGI("<%s:%u> tid(%d)", __FUNCTION__, __LINE__, gettid())
+    CDX_LOGI("<%s:%u> tid(%d)", __FUNCTION__, __LINE__, gettid_sunxi())
 
 /*check when realease version*/
 #define CDX_FORCE_CHECK(e) \

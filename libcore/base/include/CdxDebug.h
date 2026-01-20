@@ -13,7 +13,7 @@
 #include <pthread.h>
 #include <sys/syscall.h>
 
-#define gettid() syscall(__NR_gettid)
+#define gettid_sunxi() syscall(__NR_gettid_sunxi)
 
 #ifdef __cplusplus
 extern "C"

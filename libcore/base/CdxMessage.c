@@ -39,7 +39,7 @@ struct CdxDeliverTimerCtxS
 
 struct CdxDeliverTimerCtxS *gDeliverTimerHdr;
 
-/*ÓÃ¶ÓÁÐ´æ´¢ÏûÏ¢£¬¶ÁÐ´Ö®¼äÃâËø*/
+/*ï¿½Ã¶ï¿½ï¿½Ð´æ´¢ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ð´Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 static void *DeliverTimerProcess(void *arg)
 {
     struct CdxDeliverTimerCtxS *ctx = (struct CdxDeliverTimerCtxS *)arg;
@@ -116,7 +116,7 @@ struct CdxDeliverImplS
     CdxMutexT mutex;
     CdxCondT cond;
     volatile cdx_bool threadExit;
-    AwPoolT *pool; /*»áÆðÒ»¸ö¶ÀÁ¢Ïß³Ì£¬ÓÃ¶ÀÁ¢µÄpool*/
+    AwPoolT *pool; /*ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½pool*/
 };
 
 CdxDeliverT *globalDeliver = NULL;
@@ -165,12 +165,12 @@ struct CdxDeliverOpsS deliverOps =
     .postUS = __CdxDeliverPostUS
 };
 
-/*ÓÃ¶ÓÁÐ´æ´¢ÏûÏ¢£¬¶ÁÐ´Ö®¼ä¾ÍÃâËøÁË*/
+/*ï¿½Ã¶ï¿½ï¿½Ð´æ´¢ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ð´Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 static void *DeliverProcess(void *arg)
 {
     struct CdxDeliverImplS *impl = (struct CdxDeliverImplS *)arg;
     CdxMessageT *msg;
-    // CDX_LOGD("DeliverProcess (%d)", gettid());
+    // CDX_LOGD("DeliverProcess (%d)", gettid_sunxi());
 
     for (;;)
     {

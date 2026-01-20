@@ -279,7 +279,7 @@ static cdx_int32 __BdmvStreamControl(CdxStreamT *stream, cdx_int32 cmd, void *pa
         break;
     default:
         CDX_LOGW("not support cmd(%d), who call me:", cmd);
-//        CdxDumpThreadStack(gettid());
+//        CdxDumpThreadStack(gettid_sunxi());
         ret = 0;
         break;
     }

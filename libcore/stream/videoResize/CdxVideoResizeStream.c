@@ -282,7 +282,7 @@ static cdx_int32 __FileStreamSeek(CdxStreamT *stream, cdx_int64 offset, cdx_int3
         if (offset < 0 || offset > impl->size)
         {
             CDX_LOGE("invalid arguments, offset(%lld), size(%lld)", offset, impl->size);
-            CdxDumpThreadStack(gettid());
+            CdxDumpThreadStack(gettid_sunxi());
             CdxAtomicSet(&impl->state, FILE_STREAM_IDLE);
             return -1;
         }
@@ -296,7 +296,7 @@ static cdx_int32 __FileStreamSeek(CdxStreamT *stream, cdx_int64 offset, cdx_int3
         {
             CDX_LOGE("invalid arguments, offset(%lld), size(%lld), curPos(%lld)",
                       offset, impl->size, curPos);
-            CdxDumpThreadStack(gettid());
+            CdxDumpThreadStack(gettid_sunxi());
             CdxAtomicSet(&impl->state, FILE_STREAM_IDLE);
             return -1;
         }
@@ -310,7 +310,7 @@ static cdx_int32 __FileStreamSeek(CdxStreamT *stream, cdx_int64 offset, cdx_int3
         {
             CDX_LOGE("invalid arguments, offset(%lld), size(%lld)",
                       absOffset, impl->offset + impl->size);
-            CdxDumpThreadStack(gettid());
+            CdxDumpThreadStack(gettid_sunxi());
             CdxAtomicSet(&impl->state, FILE_STREAM_IDLE);
             return -1;
         }
@@ -583,7 +583,7 @@ static cdx_int32 __VideoResizeStreamSeek(CdxStreamT *stream, cdx_int64 offset, c
         if (offset < 0 || offset > impl->size)
         {
             CDX_LOGE("invalid arguments, offset(%lld), size(%lld)", offset, impl->size);
-            CdxDumpThreadStack(gettid());
+            CdxDumpThreadStack(gettid_sunxi());
             CdxAtomicSet(&impl->state, FILE_STREAM_IDLE);
             return -1;
         }
@@ -600,7 +600,7 @@ static cdx_int32 __VideoResizeStreamSeek(CdxStreamT *stream, cdx_int64 offset, c
         {
             CDX_LOGE("invalid arguments, offset(%lld), size(%lld), curPos(%lld)",
                       offset, impl->size, curPos);
-            CdxDumpThreadStack(gettid());
+            CdxDumpThreadStack(gettid_sunxi());
             CdxAtomicSet(&impl->state, FILE_STREAM_IDLE);
             return -1;
         }
@@ -618,7 +618,7 @@ static cdx_int32 __VideoResizeStreamSeek(CdxStreamT *stream, cdx_int64 offset, c
         {
             CDX_LOGE("invalid arguments, offset(%lld), size(%lld)",
                       absOffset, impl->offset + impl->size);
-            CdxDumpThreadStack(gettid());
+            CdxDumpThreadStack(gettid_sunxi());
             CdxAtomicSet(&impl->state, FILE_STREAM_IDLE);
             return -1;
         }
